@@ -30,7 +30,7 @@ public class Autocomplete {
         int firstMatch=RangeBinarySearch.firstIndexOf(dictionary,term,termComparator);
         int lastMatch=RangeBinarySearch.lastIndexOf(dictionary,term,termComparator);
         if (firstMatch==-1 || firstMatch>lastMatch) {
-            return null;
+            return new Term[0];
         }
         Term[] matches=new Term[lastMatch-firstMatch+1];
         for (int i=firstMatch;i<=lastMatch;i++){
