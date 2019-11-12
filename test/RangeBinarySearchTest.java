@@ -5,7 +5,7 @@ import java.util.Comparator;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RangeBinarySearchTest {
-    static String[] testStrings=new String[]{"ABBA","ABBA","ABBA","Abborre","Abbore","Blue Öyster Cult","Knopfler","Knopfler","Sting","Sting","Sting"};
+    static String[] testStrings=new String[]{"ABBA","ABBA","ABBA","Abborre","Abborre","Blue Öyster Cult","Knopfler","Knopfler","Sting","Sting","Sting"};
     static Comparator<String> comparator=new Comparator<String>() {
         @Override
         public int compare(String o1, String o2) {
@@ -16,7 +16,7 @@ class RangeBinarySearchTest {
     @Test
     void firstIndexOf() {
         assertEquals(0,RangeBinarySearch.firstIndexOf(testStrings,"ABBA",comparator));
-        assertEquals(3,RangeBinarySearch.firstIndexOf(testStrings,"Abbore",comparator));
+        assertEquals(3,RangeBinarySearch.firstIndexOf(testStrings,"Abborre",comparator));
         assertEquals(5,RangeBinarySearch.firstIndexOf(testStrings,"Blue Öyster Cult",comparator));
         assertEquals(6,RangeBinarySearch.firstIndexOf(testStrings,"Knopfler",comparator));
         assertEquals(8,RangeBinarySearch.firstIndexOf(testStrings,"Sting",comparator));
