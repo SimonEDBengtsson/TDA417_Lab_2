@@ -22,7 +22,7 @@ public class RangeBinarySearch {
                 break;
             }
         }
-        return minBound;
+        return comparator.compare(key,a[minBound])==0 ? minBound : -1;
     }
 
     // Returns the index of the last key in a[] that equals the search key, or -1 if no such key.
@@ -46,6 +46,6 @@ public class RangeBinarySearch {
                 break;
             }
         }
-        return maxBound;
+        return comparator.compare(key,a[maxBound])==0 ? maxBound : -1;
     }
 }
