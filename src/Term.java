@@ -5,6 +5,12 @@ public class Term {
     private long weight;
     // Initializes a term with the given query string and weight.
     public Term(String query, long weight){
+        if (query == null) {
+            throw new NullPointerException();
+        }
+        if (weight<0) {
+            throw new IllegalArgumentException();
+        }
         this.query=query;
         this.weight=weight;
     }
@@ -35,6 +41,9 @@ public class Term {
         return new Comparator<Term>() {
             @Override
             public int compare(Term o1, Term o2) {
+                if (k < 0) {
+                    throw new IllegalArgumentException();
+                }
                 int substring1Length=Math.min(k,o1.query.length());
                 int substring2Length=Math.min(k,o2.query.length());
                 String substring1=o1.query.substring(0,substring1Length);
