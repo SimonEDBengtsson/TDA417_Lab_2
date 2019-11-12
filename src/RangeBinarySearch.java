@@ -48,23 +48,4 @@ public class RangeBinarySearch {
         }
         return maxBound;
     }
-
-    private static <Key> int binarySearch(Key[] a, Key key, Comparator<Key> comparator){
-        int minBound=0;
-        int maxBound=a.length-1;
-        while (minBound<maxBound) {
-            int guess=(maxBound+minBound)/2;
-            int comparison=comparator.compare(key,a[guess]);
-            if (comparison==0) {
-                return guess;
-            }
-            else if (comparison<0){
-                maxBound=guess-1;
-            }
-            else {
-                minBound=guess+1;
-            }
-        }
-        return a.length==1 && comparator.compare(key,a[0])==0 ? 0 : -1;
-    }
 }
