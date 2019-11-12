@@ -40,7 +40,7 @@ public class RangeBinarySearch {
                 maxBound=guess-1;
             }
             else if (maxBound>guess){
-                minBound=guess;
+                minBound=guess+1;
             }
             else {
                 break;
