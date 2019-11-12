@@ -20,6 +20,7 @@ class RangeBinarySearchTest {
         assertEquals(5,RangeBinarySearch.firstIndexOf(testStrings,"Blue Öyster Cult",comparator));
         assertEquals(6,RangeBinarySearch.firstIndexOf(testStrings,"Knopfler",comparator));
         assertEquals(8,RangeBinarySearch.firstIndexOf(testStrings,"Sting",comparator));
+        assertEquals(-1,RangeBinarySearch.firstIndexOf(testStrings,"Clapton",comparator));
     }
 
     @Test
@@ -29,5 +30,6 @@ class RangeBinarySearchTest {
         assertEquals(5,RangeBinarySearch.lastIndexOf(testStrings,"Blue Öyster Cult",comparator));
         assertEquals(7,RangeBinarySearch.lastIndexOf(testStrings,"Knopfler",comparator));
         assertEquals(10,RangeBinarySearch.lastIndexOf(testStrings,"Sting",comparator));
+        assertEquals(-1,RangeBinarySearch.firstIndexOf(testStrings,"Clapton",comparator));
     }
 }
