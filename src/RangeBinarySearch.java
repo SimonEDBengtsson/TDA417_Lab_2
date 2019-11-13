@@ -22,7 +22,7 @@ public class RangeBinarySearch {
                 maxBound=guess;
             }
             else {
-                break;
+                return guess;
             }
         }
         return comparator.compare(key,a[minBound])==0 ? minBound : -1;
@@ -49,7 +49,7 @@ public class RangeBinarySearch {
                 minBound=guess+1;
             }
             else {
-                break;
+                return guess;
             }
         }
         return comparator.compare(key,a[maxBound])==0 ? maxBound : -1;
