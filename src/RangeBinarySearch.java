@@ -37,7 +37,7 @@ public class RangeBinarySearch {
         int minBound=0;
         int maxBound=a.length-1;
         while (minBound<maxBound) {
-            int guess=(maxBound+minBound)/2;
+            int guess=(maxBound+minBound+1)/2;
             int comparison=comparator.compare(key,a[guess]);
             if (comparison>0){
                 minBound=guess+1;
@@ -46,7 +46,7 @@ public class RangeBinarySearch {
                 maxBound=guess-1;
             }
             else if (maxBound>guess){
-                minBound=guess+1;
+                minBound=guess;
             }
             else {
                 return guess;
