@@ -7,6 +7,7 @@ public class Autocomplete {
     // Initializes the data structure from the given array of terms.
     // Complexity: O(N log N), where N is the number of terms
     public Autocomplete(Term[] dictionary){
+        // throw a NullPointerException if the dictionary or any of its terms are null
         if (dictionary==null) {
             throw new NullPointerException();
         }
@@ -25,6 +26,7 @@ public class Autocomplete {
         if (prefix == null) {
             throw new NullPointerException();
         }
+        // wrap the string to be completed in a Term
         Term term=new Term(prefix,0);
         Comparator<Term> termComparator=Term.byPrefixOrder(prefix.length());
         int firstMatch=RangeBinarySearch.firstIndexOf(dictionary,term,termComparator);
