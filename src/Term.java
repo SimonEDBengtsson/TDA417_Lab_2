@@ -20,7 +20,7 @@ public class Term {
         return new Comparator<Term>() {
             @Override
             public int compare(Term o1, Term o2) {
-                return o1.query.compareTo(o2.query);
+                return o1.query.toLowerCase().compareTo(o2.query.toLowerCase());
             }
         };
     }
@@ -46,8 +46,8 @@ public class Term {
                 }
                 int substring1Length=Math.min(k,o1.query.length());
                 int substring2Length=Math.min(k,o2.query.length());
-                String substring1=o1.query.substring(0,substring1Length);
-                String substring2=o2.query.substring(0,substring2Length);
+                String substring1=o1.query.substring(0,substring1Length).toLowerCase();
+                String substring2=o2.query.substring(0,substring2Length).toLowerCase();
                 return substring1.compareTo(substring2);
             }
         };
